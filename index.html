@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAM | System for Advanced Medical Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sam-bg-base: #0B132B;
+            --sam-bg-deep: #1C2541;
+            --sam-bg-vibrant: #243B6B;
+            --sam-card: #121A2F;
+            --sam-input: #1B263B;
+            --sam-cyan: #00F5D4;
+            --sam-blue: #4FACFE;
+            --sam-violet: #7B61FF;
+            --sam-text-primary: #E6EEF8;
+            --sam-text-secondary: #A9B4C7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--sam-bg-base);
+            color: var(--sam-text-primary);
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* High-End Balanced Background Gradient */
+        .neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(0, 245, 212, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(123, 97, 255, 0.05) 0%, transparent 40%),
+                linear-gradient(135deg, var(--sam-bg-base) 0%, var(--sam-bg-deep) 50%, #161B33 100%);
+        }
+
+        /* Faint medical-tech pattern overlay (Neural Network style) */
+        .neural-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(0, 245, 212, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, transparent, black, transparent);
+            opacity: 0.6;
+        }
+
+        /* Apple-level Glassmorphism */
+        .glass {
+            background: rgba(18, 26, 47, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .glass-premium {
+            background: rgba(22, 33, 62, 0.8);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Heading Gradient utility */
+        .text-sam-gradient {
+            background: linear-gradient(to right, var(--sam-cyan), var(--sam-blue), var(--sam-violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 245, 212, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 245, 212, 0.3);
+        }
+
+        input:focus, textarea:focus, select:focus {
+            box-shadow: 0 0 0 2px rgba(0, 245, 212, 0.2);
+            border-color: rgba(0, 245, 212, 0.4) !important;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--sam-cyan) 0%, var(--sam-blue) 100%);
+            box-shadow: 0 4px 15px -5px rgba(0, 245, 212, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px -5px rgba(0, 245, 212, 0.6);
+            filter: brightness(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div class="neural-bg">
+        <div class="neural-grid"></div>
+    </div>
+    <div id="root"></div>
+</body>
+</html>

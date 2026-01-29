@@ -1,0 +1,9 @@
+{
+  "name": "BioMed Nexus - Advanced Digital Workspace",
+  "description": "An integrated biomedical super-platform for education, hospital intelligence, equipment discovery, and career growth.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
